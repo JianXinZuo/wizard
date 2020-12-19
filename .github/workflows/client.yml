@@ -60,8 +60,7 @@ jobs:
         run: docker login --username=${{ secrets.TENCENT_YUN_USERNAME }} --password ${{ secrets.TENCENT_YUN_PASSWORD }} ccr.ccs.tencentyun.com
 
       - name: build docker image
-        run: docker build -t wizard_website .
-        working-directory: client
+        run: docker build -f ./Dockerfile.Client -t wizard_website ./client
 
       - name: tag the image & push the image to cloud
         run: |
