@@ -25,6 +25,7 @@ COPY . .
 COPY --from=dep_cache /deps/node_modules ./node_modules
 COPY --from=dep_cache /deps/server/node_modules ./server/node_modules
 COPY --from=dep_cache /deps/packages ./packages
+COPY --from=dep_cache /deps/shared ./shared
 
 WORKDIR /node_middlewares/server
 
